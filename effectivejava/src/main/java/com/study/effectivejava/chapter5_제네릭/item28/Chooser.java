@@ -4,11 +4,11 @@ import java.util.Collection;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Chooser {
-	private final Object[] choiceArray;
+public class Chooser<T> {
+	private final T[] choiceArray;
 
-	public Chooser(Collection choices) {
-		this.choiceArray = choices.toArray();
+	public Chooser(Collection<T> choices) {
+		this.choiceArray = (T[]) choices.toArray();
 	}
 
 	public Object choose() {
